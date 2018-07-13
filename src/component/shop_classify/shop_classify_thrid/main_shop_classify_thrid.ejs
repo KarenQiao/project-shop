@@ -1,0 +1,33 @@
+<!-- 顶部导航 -->
+<nav class="jd_top_bar">
+    <div class="tab_box"></div>
+    <div class="jd_top_contain jdshop_alignment_center">
+        <a class="left" onclick="window.history.go(-1)">
+            <p class="back"><img src="../../images/nav_go_back.png"></p>
+        </a>
+        <div class="content jdshop_alignment_center">
+            店铺分类
+        </div>
+        <a class="right">
+
+        </a>
+    </div>
+</nav>
+
+<div class="product_content jdshop_alignment_center">
+
+    <%- include('sliding_category_left/product_category_1_slide.ejs')%>
+
+    <%- include('class_category_2_two/product_category_2_black.ejs')%>
+
+
+</div>
+
+
+<script>
+    var div_select_sort = document.getElementsByClassName('select_sort')[0];
+
+    if(div_select_sort.innerText != '为你推荐'){
+        document.getElementsByClassName('product_category_page')[0].style.display = 'block';
+    }
+</script>

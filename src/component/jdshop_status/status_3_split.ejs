@@ -1,0 +1,129 @@
+<div class="status_split_main jdshop_shadow">
+
+    <div class="status_split select">
+
+        <div class="status_split_title">【上海市】 已签收，签收人是已签收</div>
+
+        <div class="status_split_time">2017-06-14 16:45</div>
+
+        <div class="status_line"></div>
+
+    </div>
+
+
+
+    <div class="status_split">
+
+        <div class="status_split_title">【上海市】上海徐汇上师大公司的派件员桂嘉南正在派件</div>
+
+        <div class="status_split_time">2017-06-14 11:45</div>
+
+        <div class="status_line"></div>
+
+    </div>
+
+
+    <div class="status_split">
+
+        <div class="status_split_title">【上海市】上海市徐汇区内分拨 发往 上海市徐汇上师大公司</div>
+
+        <div class="status_split_time">2017-06-14 09:45</div>
+
+        <div class="status_line"></div>
+
+    </div>
+
+    <div class="status_split">
+
+        <div class="status_split_title">【上海市】快件已到达 上海徐汇上师大公司 扫描员是 晚班件
+            上一站是
+        </div>
+
+        <div class="status_split_time">2017-06-14 06:45</div>
+
+        <div class="status_line"></div>
+
+    </div>
+
+    <div class="status_split">
+
+        <div class="status_split_title">【上海市】上海中转部 发往 上海徐汇市内分拨</div>
+
+        <div class="status_split_time">2017-06-14 00:45</div>
+
+        <div class="status_line"></div>
+
+    </div>
+
+    <div class="status_split">
+
+        <div class="status_split_title">【上海市】上海嘉定公司 发往 上海中转部</div>
+
+        <div class="status_split_time">2017-06-13 20:45</div>
+
+        <div class="status_line"></div>
+
+    </div>
+
+    <div class="status_split">
+
+        <div class="status_split_title">【上海市】上海嘉定公司 正在进行装袋 扫描</div>
+
+        <div class="status_split_time">2017-06-13 18:45</div>
+
+        <div class="status_line"></div>
+
+    </div>
+
+    <div class="status_split">
+
+        <div class="status_split_title">【上海市】上海嘉定公司的收件员 vip01 已收件</div>
+
+        <div class="status_split_time">2017-06-13 17:05</div>
+
+        <div class="status_line"></div>
+
+    </div>
+
+    <div class="status_split">
+
+        <div class="status_split_title">卖家发货</div>
+
+        <div class="status_split_time">2017-06-13 16:35</div>
+
+    </div>
+
+</div>
+
+<div class="status_split_more">
+    <span>点击查看更多物流详情</span>
+    <span class="down_icon"></span>
+</div>
+
+
+<script>
+
+    //添加折叠按钮事件监听
+    var div_status_split_main = document.getElementsByClassName('status_split_main')[0];
+    var div_status_split = document.getElementsByClassName('status_split');
+    var div_status_split_more = document.getElementsByClassName('status_split_more')[0];
+    var height = window.getComputedStyle(div_status_split_main).height;
+    var height1 = window.getComputedStyle(div_status_split[0]).height;
+    var height2 = window.getComputedStyle(div_status_split[1]).height;
+    div_status_split_main.style.height = parseFloat(height1) + parseFloat(height2)+ 10 + 'px';
+    div_status_split_more.addEventListener('click',function(){
+        if( div_status_split_more.children[0].innerText == '点击查看更多物流详情'){
+            div_status_split_more.children[0].innerText = '折叠更多物流信息';
+            div_status_split_more.children[1].setAttribute('class','up_icon');
+            div_status_split_main.style.height = height;
+            div_status_split_more.style.marginTop = '-15px';
+        }
+        else{
+            div_status_split_more.children[0].innerText = '点击查看更多物流详情';
+            div_status_split_more.children[1].setAttribute('class','down_icon');
+            div_status_split_main.style.height = parseFloat(height1) + parseFloat(height2)+ 10 + 'px';
+            div_status_split_more.style.marginTop = '0px';
+        }
+    })
+
+</script>

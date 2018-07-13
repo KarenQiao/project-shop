@@ -1,0 +1,256 @@
+<!-- 顶部导航 -->
+<nav class="jd_top_bar">
+    <div class="tab_box"></div>
+    <div class="jd_top_contain jdshop_alignment_center">
+        <a class="left">
+            <p>福利商城</p>
+        </a>
+        <div class="content jdshop_alignment_center">
+            购物车
+        </div>
+        <a class="right" id="editTabBtn">
+            编辑
+        </a>
+    </div>
+</nav>
+
+
+<!-- 页面内容 -->
+
+<div class="shopping_cart_module">
+
+    <%- include('shopping_cart_module/shopping_cart_1_address.ejs') %>
+
+    <%- include('shopping_cart_module/shopping_cart_3_list.ejs') %>
+
+    <%- include('shopping_cart_module/shopping_cart_4_yx_list.ejs') %>
+
+    <%- include('shopping_cart_module/shopping_cart_5_load.ejs') %>
+
+    <%- include('shopping_cart_module/shopping_cart_6_send_to.ejs') %>
+
+</div>
+
+
+<div id="shopping_cart_prompt">
+
+    <%- include('../../component/product/product_prompt/product_prompt_1_address.ejs') %>
+
+</div>
+
+<!-- 切换tab-->
+
+
+<!-- 编辑 -->
+<div class="operation_tab jdshop_alignment_center" id="settlementTab">
+    <div class="jdshop_alignment_left">
+        <label>
+            <input class="radio allcheck" type="checkbox"><span>全选</span>
+        </label>
+        <div class="price">合计:<span class="font_red">￥139000.00</span></div>
+    </div>
+    <a class="operation_btn red" href="../jdshop_purchasing_process/order_confirm.html">去结算</a>
+</div>
+<!-- 删除 -->
+<div class="operation_tab jdshop_alignment_center" id="deleteTab">
+    <div class="jdshop_alignment_left">
+        <label>
+            <input class="radio allcheck" type="checkbox"><span>全选</span>
+        </label>
+    </div>
+    <a class="operation_btn red" id="deleteBtn">删除</a>
+</div>
+
+
+<!-- 底部导航 -->
+<footer class="bottom_tabbar">
+    <div class="tab_box"></div>
+    <div class="bottom_tabbar_contain jdshop_alignment_center ">
+        <a href="../jdshop_homepage/main.html" class="current_page">
+            <div class="tabbar_icon">
+                <img src="../../icon/icon_main_home_gray.png">
+                <img src="../../icon/icon_main_home_red.png">
+            </div>
+            <p>商城首页</p>
+        </a>
+        <a href="../jdshop_category/product_category.html" class="current_page">
+            <div class="tabbar_icon">
+                <img src="../../icon/icon_main_sorts_gray.png">
+                <img src="../../icon/icon_main_sorts_red.png">
+            </div>
+            <p>分类</p>
+        </a>
+        <a href="../jdshop_shoppingcart/shoppingcart.html" class="current_page  jd_tab_on">
+            <div class="tabbar_icon">
+                <img src="../../icon/icon_main_car_gray.png">
+                <img src="../../icon/icon_main_car_red.png">
+            </div>
+            <p>购物车</p>
+        </a>
+        <a href="../jdshop_mine/mine.html" class="current_page">
+            <div class="tabbar_icon">
+                <img src="../../icon/personal_center_grey.png">
+                <img src="../icon/personal_center_red.png">
+            </div>
+            <p>个人中心</p>
+        </a>
+    </div>
+</footer>
+
+
+<script>
+
+
+    //编辑&完成 tab切换
+    jdShoppingCart.editDeleteChange();
+
+
+    //编辑下将选中的删除
+    function deleteList() {
+
+
+        document.getElementById('deleteBtn').addEventListener('click', function () {
+
+
+            jfShowTips.dialogShow({
+
+                'mainText': '友情提示',
+                'minText': '确认要删除这个商品吗？',
+                'checkFn': function () {
+
+                    jfShowTips.dialogRemove();//弹出框消失
+
+                    var div_list_contain = document.getElementsByClassName('list_contain');
+                    for( var i = 0 ; i < div_list_contain.length ; i++ ){
+                        var checkbox = div_list_contain[i].getElementsByClassName('radio')[0];
+                        if(checkbox.checked){
+                            div_list_contain[i].remove();
+                            i--;
+                        }
+                    }
+                    var check = document.getElementsByClassName('radio');
+                    for( var i = 0 ; i < check.length ; i++){
+                        check[i].checked = false;
+                    }
+                }
+            });
+
+        }, false)
+
+    }
+
+    deleteList();
+
+    //全选反选
+    var div_jd_all = document.getElementsByClassName('jd_list')[0];
+    var div_yx_all = document.getElementsByClassName('yx_list')[0];
+    var div_all = document.getElementsByClassName('allcheck')[0];
+    var check_jd_all = div_jd_all.getElementsByClassName('company_checkbox')[0].getElementsByClassName('radio')[0];
+    var check_yx_all = div_yx_all.getElementsByClassName('company_checkbox')[0].getElementsByClassName('radio')[0];
+    var div_jd_check = div_jd_all.getElementsByClassName('list_contain');
+    var div_yx_check = div_yx_all.getElementsByClassName('list_contain');
+
+    //添加全选按钮事件监听
+    div_all.addEventListener('click',function(){
+        var all_check = document.getElementsByClassName('radio');
+        if(div_all.checked){
+            for(var i = 0;i<all_check.length;i++){
+                all_check[i].checked = true;
+            }
+        }
+        else{
+            for(var i = 0;i<all_check.length;i++){
+                all_check[i].checked = false;
+            }
+        }
+    })
+
+    //添加京东全选按钮事件监听
+    check_jd_all.addEventListener('click',function(){
+        if(check_jd_all.checked){
+            for (var j = 0; j<div_jd_check.length;j++){
+                var jd_one_check = div_jd_check[j].getElementsByClassName('radio')[0];
+                jd_one_check.checked = true;
+            }
+        }
+        else{
+            for (var j = 0; j<div_jd_check.length;j++){
+                var jd_one_check = div_jd_check[j].getElementsByClassName('radio')[0];
+                jd_one_check.checked = false;
+            }
+        }
+        if( check_jd_all.checked && check_yx_all.checked ){
+            div_all.checked = true;
+        }
+        else{
+            div_all.checked = false;
+        }
+    })
+    
+    //添加严选全选按钮事件监听
+    check_yx_all.addEventListener('click',function(){
+        if(check_yx_all.checked){
+            for (var j = 0; j<div_yx_check.length;j++){
+                var yx_one_check = div_yx_check[j].getElementsByClassName('radio')[0];
+                yx_one_check.checked = true;
+            }
+        }
+        else{
+            for (var j = 0; j<div_yx_check.length;j++){
+                var yx_one_check = div_yx_check[j].getElementsByClassName('radio')[0];
+                yx_one_check.checked = false;
+            }
+        }
+        if( check_jd_all.checked && check_yx_all.checked ){
+            div_all.checked = true;
+        }
+        else{
+            div_all.checked = false;
+        }
+    })
+
+    //添加京东单选按钮事件监听
+    for( var i = 0; i<div_jd_check.length;i++){
+        var jd_one_check = div_jd_check[i].getElementsByClassName('radio')[0];
+        jd_one_check.addEventListener('click',function(){
+            var check = true;
+            for (var j = 0; j<div_jd_check.length;j++){
+                var jd_one_check = div_jd_check[j].getElementsByClassName('radio')[0];
+                if(!jd_one_check.checked){
+                    check = false;
+                }
+            }
+            check_jd_all.checked = check;
+            if( check_jd_all.checked && check_yx_all.checked ){
+                div_all.checked = true;
+            }
+            else{
+                div_all.checked = false;
+            }
+        });
+    }
+
+    //添加严选单选按钮事件监听
+    for( var i = 0; i<div_yx_check.length;i++){
+        var yx_one_check = div_yx_check[i].getElementsByClassName('radio')[0];
+        yx_one_check.addEventListener('click',function(){
+            var check = true;
+            for (var j = 0; j<div_yx_check.length;j++){
+                var yx_one_check = div_yx_check[j].getElementsByClassName('radio')[0];
+                if(!yx_one_check.checked){
+                    check = false;
+                }
+            }
+            check_yx_all.checked = check;
+            if( check_jd_all.checked && check_yx_all.checked ){
+                div_all.checked = true;
+            }
+            else{
+                div_all.checked = false;
+            }
+        });
+    }
+
+
+</script>
+

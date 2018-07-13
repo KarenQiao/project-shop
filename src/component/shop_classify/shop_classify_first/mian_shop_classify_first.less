@@ -1,0 +1,44 @@
+.shop_classify{
+  background-color: white;
+  .one_of_shop{
+    padding: 10px;
+    position: relative;
+    &:hover{
+      background-color: #ababab;
+    }
+    &:before{
+      content: '';
+      clear: both;
+      display: table;
+    }
+    &:after{
+      content: '';
+      display: table;
+      clear: both;
+    }
+    .shop_name{
+      vertical-align: center;
+      text-align: center;
+      float: left;
+    }
+    .shop_button{
+      float: right;
+      vertical-align: center;
+      img{
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}
+
+.one_of_shop+.one_of_shop:before{
+  content: '';
+  width: 100%;
+  height: 1px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 1px solid #f6f6f6;
+}

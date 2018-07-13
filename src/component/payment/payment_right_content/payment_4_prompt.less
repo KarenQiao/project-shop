@@ -1,0 +1,29 @@
+.payment_prompt{
+  padding: 15px;
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  .prompt_contain{
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    .figure{
+      position: relative;
+      display: block;
+      color: #ff0200;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 1px solid #ffb2b2;
+      &:before{
+        content: '!';
+        position: absolute;
+        top: -1px;
+        left: 6px;
+        font-size: 12px;
+      }
+    }
+  }
+}

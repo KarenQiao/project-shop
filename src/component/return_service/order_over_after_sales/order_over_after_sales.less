@@ -1,0 +1,35 @@
+.over_application_list_content{
+  position: relative;
+  height: 580px;
+  height: calc(~'100vh - 87px');
+  width: 100%;
+  overflow: hidden;
+  .order_title{
+    position: relative;
+    padding: 10px 15px;
+    font-size: 12px;
+    color: #8a8a8a;
+  }
+  .after_sales_list{
+    .customer_service{
+      .order_content{
+        .application_record_goods{
+          &:after{
+            content: '';
+            display: none;
+          }
+        }
+        .customer_service_button{
+          padding: 0 15px 15px;
+          margin-top: -10px;
+          .sales_order{
+            padding: 5px 20px;
+            border-radius: 8px;
+            border: 1px solid #ababab;
+            color: #ff4646;
+          }
+        }
+      }
+    }
+  }
+}

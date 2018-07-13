@@ -1,0 +1,43 @@
+.payment_detail{
+  background-color: #fff;
+  .operation_prompt {
+    text-align: center;
+    margin-bottom: 20px;
+    p:first-child {
+      font-size: 16px;
+    }
+    p + p {
+      font-size: 14px;
+    }
+  }
+  .explain{
+    position: relative;
+    padding: 20px 33px 5px;
+    span{
+      color: #8a8a8a;
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15px;
+      box-sizing: border-box;
+      width: 92%;
+      height: 1px;
+      color: #ddd;
+      border-bottom: 1px solid #ddd;
+      transform-origin: 0 0;
+      transform: scaleY(.6);
+    }
+  }
+}
+.icon_img{
+  padding: 100px 10px 15px;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  img{
+    width: 100px;
+    height: 100px;
+  }
+}

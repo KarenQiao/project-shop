@@ -1,0 +1,69 @@
+<div class="order_confirm_total jdshop_shadow">
+    <div class="text_list jdshop_alignment_center">
+        <p>商品总金额：</p>
+        <p class="font_red">￥123,678,000.00</p>
+    </div>
+    <div class="text_list jdshop_alignment_center">
+        <p class="money_detail">运费：<span><img src="../../images/icon_what.png"></span></p>
+        <p class="font_red">+ ￥24.00</p>
+    </div>
+    <div class="text_list jdshop_alignment_center" id="discountList" onclick="discountShow.show()">
+        <p>优惠券：</p>
+        <p class="font_red">- ￥20.00</p>
+    </div>
+</div>
+
+<script>
+
+
+    //点击优惠券显示弹出框 0926
+
+    discountShow = new jfDialog({
+
+        'ele':'order_discount',
+        'scrollClassname':'text_small'
+
+    })
+
+
+    //添加运费详情按钮事件
+    var div_money_detail_buttom = document.getElementsByClassName('money_detail')[0];
+
+    div_money_detail_buttom.addEventListener('click',function(){
+        var data_money_detail = '<div class="company_list">' +
+            '<div class="company_info"><span>京东自营</span><span>运费：￥6.00</span></div>' +
+            '<div class="list">' +
+            '<img src="../../images/product_list_1.jpg">' +
+            '<img src="../../images/product_list_1.jpg">' +
+            '<img src="../../images/product_list_1.jpg">' +
+            '<img src="../../images/product_list_1.jpg">' +
+            '<img src="../../images/product_list_1.jpg">' +
+            '<img src="../../images/product_list_1.jpg">' +
+            '<img src="../../images/product_list_1.jpg">' +
+            '</div></div>' +'<div class="company_list">' +
+            '<div class="company_info"><span>网易严选</span><span>运费：￥6.00</span></div>' +
+            '<div class="list">' +
+            '<img src="../../images/product_list_1.jpg">' +
+            '<img src="../../images/product_list_1.jpg">' +
+            '<img src="../../images/product_list_1.jpg">' +
+            '</div></div><div class="money_detail_eg">注：运费可能随品类变动，点此查看运费细则<a href="money_detail.html"><img src="../../images/order_details_4_help.png"></a></div>'
+
+
+        jfShowTips.dialogShow({
+                'mainText':'运费详情',
+                'minText':data_money_detail,
+                'noCancel':true,
+                'checkBtnText':'我知道了',
+                'checkFn': function() {
+                    jfShowTips.dialogRemove();
+                }
+            }
+        )
+
+        var div_text_big = document.getElementsByClassName('text_big');
+        div_text_big[div_text_big.length-1].setAttribute('class','text_title');
+    })
+
+
+
+</script>

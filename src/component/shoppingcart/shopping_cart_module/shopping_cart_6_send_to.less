@@ -1,0 +1,102 @@
+.send_to{
+  height: 50vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  z-index: 1001;
+  transform: translateY(120%);
+  .send_to_title{
+    padding: 15px 4%;
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 4%;
+      box-sizing: border-box;
+      width: 92%;
+      height: 1px;
+      color: #ddd;
+      border-bottom: 1px solid #ddd;
+      transform: scaleY(0.2);
+    }
+    p{
+      text-align: center;
+    }
+    span{
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 15px;
+      right: 4%;
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 14px;
+        border-top: 1px solid #4a4a4a;
+        top: 10px;
+        right: 4%;
+        transform: rotate(45deg);
+      }
+      &:after{
+         content: '';
+         display: block;
+         position: absolute;
+         width: 14px;
+         border-top: 1px solid #4a4a4a;
+         top: 10px;
+         right: 4%;
+         transform: rotate(-45deg);
+       }
+    }
+  }
+  .address_list{
+    .address_select{
+      padding: 10px 4%;
+      position: relative;
+      &:before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 4%;
+        box-sizing: border-box;
+        width: 92%;
+        height: 1px;
+        color: #ddd;
+        border-bottom: 1px solid #ddd;
+        transform: scaleY(0.2);
+      }
+      .personal_call{
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .send_to_address{
+        width: 90%;
+      }
+    }
+    .send_to_selected{
+      &:after{
+        content: '';
+        width: 14px;
+        height: 7px;
+        display: block;
+        position: absolute;
+        border-bottom: 2px solid #ff0200;
+        border-left: 2px solid #ff0200;
+        right: 5%;
+        bottom: 50%;
+        transform: rotate(-45deg) translateY(50%);
+      }
+      .personal_name{
+        &:after{
+          content: '【默认地址】';
+          color: #ff0200;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

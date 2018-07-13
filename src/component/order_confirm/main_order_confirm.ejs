@@ -1,0 +1,81 @@
+<!-- 顶部导航 -->
+<nav class="jd_top_bar">
+    <div class="tab_box"></div>
+    <div class="jd_top_contain jdshop_alignment_center">
+        <a class="left" onclick="window.history.go(-1)">
+            <p class="back"><img src="../../images/nav_go_back.png"></p>
+        </a>
+        <div class="content jdshop_alignment_center">
+            填写订单
+        </div>
+        <a class="right">
+
+        </a>
+    </div>
+</nav>
+
+
+<div class="order_confirm">
+
+    <%- include('order_confirm_page/order_confirm_1_address.ejs')%>
+
+    <%- include('order_confirm_page/order_confirm_3_yx_list.ejs')%>
+
+    <%- include('order_confirm_page/order_confirm_2_list.ejs')%>
+
+    <%- include('order_confirm_page/order_confirm_3_total.ejs')%>
+
+</div>
+
+
+<%- include('order_confirm_prompt/order_confirm_discount.ejs')%>
+<!--注意-->
+<!--<div class="attention_list">
+    <div class="tab_box"></div>
+    <div class="text font_org">注意：提交订单后24小时内完成支付，否则订单会被自动取消</div>
+</div>-->
+
+<!-- footer -->
+<footer class="bottom_order_tabbar">
+    <div class="tab_box"></div>
+
+
+
+    <a class="tickets_tips"  href="../jdshop_homepage/main.html">注意：提交订单后24小时内完成支付，否则订单会被自动取消。</a>
+    <div class="order_tabbar_contain">
+        <div>应付款：<span class="font_red">￥13,000.00</span></div>
+        <a class="order_btn red" onclick="jfShowTips.dialogShow({
+         'mainText':'附件或赠品无货提示',
+         'minText':'部分附件或赠品无货，请选择是否提交订单，主商品下的附件或赠品无货不能提交订单，但如要放弃附件或赠品则可提交订单。如:某主商品下有2个附件+3个赠品，某个附件/赠品无货，放弃时将会把该附件或赠品里的都一起放弃。如有疑问请咨询：400-821-6990',
+         'checkBtnText':'我自愿放弃赠品/附件并提交订单',
+         'cancleBtnText':'关闭提示',
+         'checkFn': function() {
+           window.location.href='../jdshop_purchasing_process/payment_successful.html'
+         }
+        }
+        )">提交订单</a>
+    </div>
+</footer>
+
+<script>
+    var div_jdshop_alignment_center = document.getElementsByClassName('content')[0];
+    div_jdshop_alignment_center.addEventListener('click',function(){
+        jfShowTips.dialogShow({
+                'minText':'您在浏览商品的过程中选择了新的地址，是否新建一个收货地址？',
+                'checkBtnText':'取消',
+                'cancleBtnText':'去新建',
+                'checkFn': function() {
+                    jfShowTips.dialogRemove();
+                }
+            });
+        var div_text_big = document.getElementsByClassName('text_big');
+        div_text_big[div_text_big.length-1].remove();
+        var div_text_small = document.getElementsByClassName('text_small');
+        div_text_small[div_text_small.length-1].setAttribute('style','padding:20px 20px 10px;color:#4a4a4a;box-sizing: border-box;text-align:center;');
+        var div_check = document.getElementsByClassName('dialog_check');
+        var div_cancel = document.getElementsByClassName('dialog_cancel');
+        div_check[div_check.length-1].setAttribute('class','dialog_cancel gray');
+        div_cancel[div_cancel.length-1].setAttribute('class','dialog_check red');
+        div_check[div_check.length-1].setAttribute('href','../jdshop_address/add_address.html');
+    });
+</script>

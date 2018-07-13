@@ -1,0 +1,43 @@
+
+.search_find_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    width: 90%;
+    color: #4a4a4a;
+    font-size: 14px;
+  }
+
+}
+
+.pop_cancel {
+  width: 30px;
+  height: 30px;
+
+  &:after, &:before {
+    content: '';
+    width: 14px;
+    height: 1px;
+    background:#8a8a8a;
+    display: block;
+    position: absolute;
+    right: 18px;
+    top: 20px;
+
+  }
+
+  &:after {
+
+    transform: rotate(45deg);
+
+  }
+
+  &:before {
+
+    transform: rotate(-45deg);
+
+  }
+
+}
