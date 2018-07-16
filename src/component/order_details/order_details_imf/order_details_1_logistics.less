@@ -1,0 +1,79 @@
+.order_details_logistics{
+  background-color: #fff;
+  .title{
+    position: relative;
+    font-size: 14px;
+    padding: 10px 15px;
+    color: #ff0200;
+    span{
+      display: inline-block;
+      background-image: url("../images/order_details_1_car.png");
+      width: 18px;
+      height: 18px;
+      background-size: 100%;
+      margin-right: 10px;
+      margin-top: 4px;
+      vertical-align: top;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: 100%;
+      height: 1px;
+      color: #ddd;
+      border-bottom: 1px solid #ddd;
+      transform-origin: 0 0;
+      transform: scaleY(0.6);
+    }
+  }
+}
+.order_details_imf{
+  .order_confirm_address{
+    .personal_info{
+      display: flex;
+      justify-content: left;
+      .address_icon{
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        p{
+          margin: 0;
+        }
+      }
+      .address_content{
+        .name{
+          font-size: 14px;
+        }
+      }
+      .address{
+        margin: 5px 0 0 0;
+        color: #ababab;
+        p{
+          display: -webkit-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-height: 22px;
+          max-height: 44px;
+        }
+      }
+    }
+  }
+}
+.company_content{
+  position: relative;
+  .company_button{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    img{
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

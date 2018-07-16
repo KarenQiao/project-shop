@@ -1,0 +1,107 @@
+.order_confirm_total{
+  background-color: #fff;
+  margin-bottom: 15px;
+  .text_list{
+    background-color: #fff;
+    position: relative;
+    padding: 10px 15px;
+    span{
+      img{
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+      }
+    }
+    p:first-child{
+      width: 100px;
+    }
+    p+p{
+      width: calc(~'100% - 100px');
+      text-align: right;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      box-sizing: border-box;
+      width: 92%;
+      height: 1px;
+      color: #ddd;
+      border-bottom: 1px solid #ddd;
+      transform-origin: 0 0;
+      transform: scaleY(.6);
+    }
+    &:last-child:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      border-bottom: none;
+    }
+  }
+}
+#tip_dialog{
+  box-sizing: border-box;
+  .text_dialog_container{
+    .text_title{
+      padding: 10px 4%;
+      text-align: center;
+      position: relative;
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 4%;
+        box-sizing: border-box;
+        width: 92%;
+        height: 1px;
+        color: #ddd;
+        border-bottom: 1px solid #ddd;
+        transform-origin: 0 0;
+        transform: scaleY(0.6);
+      }
+    }
+    .text_small{
+      margin: 0;
+      width: 100%;
+      text-align: left;
+      .company_list{
+        padding: 0 4%;
+        .company_info{
+          display: flex;
+          justify-content: space-between;
+          color: #4a4a4a;
+          font-size: 12px;
+          padding: 10px 0;
+        }
+        .list{
+          white-space: nowrap;
+          width: 100%;
+          overflow: auto;
+          img{
+            width: 75px;
+            height: 75px;
+          }
+        }
+      }
+      .money_detail_eg{
+        padding: 0 4%;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        a{
+          padding: 0 5px;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          img{
+            width: 14px;
+            height: 14px;
+            vertical-align: center;
+          }
+        }
+      }
+    }
+  }
+}

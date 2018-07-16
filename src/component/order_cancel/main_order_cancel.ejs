@@ -1,0 +1,149 @@
+<!-- 顶部导航 -->
+<nav class="jd_top_bar">
+    <div class="tab_box"></div>
+    <div class="jd_top_contain jdshop_alignment_center">
+        <a class="left" onclick="window.history.go(-1)">
+            <p class="back"><img src="../../images/nav_go_back.png"></p>
+        </a>
+        <div class="content jdshop_alignment_center">
+            订单详情
+        </div>
+        <a class="right">
+            <span class="point"></span><span class="point"></span><span class="point"></span>
+        </a>
+    </div>
+</nav>
+
+<div class="order_details_imf">
+
+    <div class="order_details_logistics jdshop_shadow">
+
+        <div class="title jdshop_alignment_left">
+            <p>订单已取消</p>
+        </div>
+
+    </div>
+
+    <%- include('../order_details/order_details_imf/order_details_2_address.ejs') %>
+
+
+</div>
+
+<div class="order_details_product">
+
+    <%- include('../order_details/order_details_product/order_details_1_list.ejs') %>
+
+</div>
+
+<div class="order_details_service">
+
+
+    <%- include('../order_details/order_details_service/order_details_2_distribution.ejs') %>
+
+    <%- include('../order_details/order_details_service/order_details_3_remarks.ejs') %>
+
+    <%- include('../order_details/order_details_service/order_details_1_total.ejs') %>
+
+    <%- include('../order_details/order_details_service/order_details_5_code.ejs') %>
+
+    <%- include('../order_details/order_details_service/order_details_4_phone.ejs') %>
+
+</div>
+
+<!-- 取消模态框-->
+
+<%- include('../order_details/order_details_prompt/order_details_cancel.ejs') %>
+
+
+<!-- footer-->
+
+<footer class="order_details_tabbar">
+    <div class="tab_box"></div>
+    <div class="order_tabbar_contain jdshop_alignment_right">
+        <!--<a class="jdshop_btn_mini btn_lightgray_border" onclick="orderCancel.show();">取消订单</a>-->
+        <a class="jdshop_btn_mini btn_red_border" href="#">删除订单</a>
+    </div>
+</footer>
+
+<!-- 弹出框 -->
+<div class="order_dialog" style="display: none">
+    <div id="dialog_bg_order" class="tip_bg_order"></div>
+    <div id="tip_dialog_order">
+        <div class="text_dialog_container">
+            <div class="text_big">查看京东单号</div>
+            <div class="cancel"></div>
+            <div class="text_small">
+                <p>本订单在京东商城上的订单编号是：</p>
+                <p>12300012300123，库房不同，被拆分成如下订单</p>
+                <div class="product_box">
+                    <div class="product_list">
+                        <p>子订单号：12300012300045</p>
+                        <p class="img_list jdshop_alignment_left">
+                            <img src="../../images/product_list_2.jpg">
+                            <img src="../../images/product_list_1.jpg">
+                        </p>
+                    </div>
+                    <div class="product_list">
+                        <p>子订单号：12300012300045</p>
+                        <p class="img_list jdshop_alignment_left">
+                            <img src="../../images/product_list_4.jpg">
+                            <img src="../../images/product_list_2.jpg">
+                            <img src="../../images/product_list_1.jpg">
+                            <img src="../../images/product_list_3.jpg">
+                            <img src="../../images/product_list_4.jpg">
+                            <img src="../../images/product_list_2.jpg">
+                            <img src="../../images/product_list_1.jpg">
+                            <img src="../../images/product_list_3.jpg">
+                        </p>
+                    </div>
+                    <div class="product_list">
+                        <p>子订单号：12300012300045</p>
+                        <p class="img_list jdshop_alignment_left">
+                            <img src="../../images/product_list_4.jpg">
+                            <img src="../../images/product_list_2.jpg">
+                            <img src="../../images/product_list_1.jpg">
+                            <img src="../../images/product_list_3.jpg">
+                        </p>
+                    </div>
+                    <div class="product_list">
+                        <p>子订单号：12300012300045</p>
+                        <p class="img_list jdshop_alignment_left">
+                            <img src="../../images/product_list_2.jpg">
+                            <img src="../../images/product_list_1.jpg">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_button" >
+                <a class="dialog_check red" id="iKownBtn">我知道了</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    //添加删除订单按钮事件监听 点击后弹窗
+    var div_jdshop_alignment_center = document.getElementsByClassName('jdshop_btn_mini')[0];
+    div_jdshop_alignment_center.addEventListener('click',function(){
+        jfShowTips.dialogShow({
+            'minText':'确认要删除订单么？',
+            'checkBtnText':'取消',
+            'cancleBtnText':'确认',
+            'checkFn': function() {
+                jfShowTips.dialogRemove();
+            }
+        });
+
+        //更改弹窗样式和按键属性
+        var div_text_big = document.getElementsByClassName('text_big');
+        div_text_big[div_text_big.length-1].remove();
+        var div_text_small = document.getElementsByClassName('text_small');
+        div_text_small[div_text_small.length-1].setAttribute('style','padding:20px 20px 10px;color:#4a4a4a;box-sizing: border-box;text-align:center;');
+        var div_check = document.getElementsByClassName('dialog_check');
+        var div_cancel = document.getElementsByClassName('dialog_cancel');
+        div_check[div_check.length-1].setAttribute('class','dialog_cancel gray');
+        div_cancel[div_cancel.length-1].setAttribute('class','dialog_check red');
+    });
+</script>

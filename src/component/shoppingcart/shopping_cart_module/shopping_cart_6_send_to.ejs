@@ -1,0 +1,77 @@
+<div class="send_to">
+    <div class="send_to_title">
+        <p>配送至</p>
+        <span class="send_to_close"></span>
+    </div>
+    <div class="address_list">
+        <div class="address_select send_to_selected">
+            <div class="personal_call">
+                <span class="personal_name">李小二</span>
+                <span>18666228998</span>
+            </div>
+            <div class="send_to_address">
+                上海市徐汇区加华广场，虹桥路808号，加华广场
+            </div>
+        </div>
+        <div class="address_select">
+            <div class="personal_call">
+                <span class="personal_name">李小二</span>
+                <span>18666228998</span>
+            </div>
+            <div class="send_to_address">
+                上海市徐汇区加华广场，虹桥路808号，加华广场
+            </div>
+        </div>
+        <div class="address_select">
+            <div class="personal_call">
+                <span class="personal_name">李小二</span>
+                <span>18666228998</span>
+            </div>
+            <div class="send_to_address">
+                上海市徐汇区加华广场，虹桥路808号，加华广场
+            </div>
+        </div>
+    </div>
+    <div class="bottom_button">
+        <a href="../jdshop_address/delivery_address.html" class="button_contain">选择其他地址</a>
+    </div>
+</div>
+
+
+<script>
+
+    //绑定关闭按钮关闭事件
+    var div_send_to_close = document.getElementsByClassName('send_to_close')[0];
+    div_send_to_close.addEventListener('click',function(){
+        var div = document.getElementsByClassName('send_to')[0];
+        var div_jf_pop_up = document.getElementsByClassName('jf_pop_up');
+        div.style.transform = 'translateY(120%)';
+        div_jf_pop_up[div_jf_pop_up.length - 1].remove();
+    });
+
+    //绑定按键选择默认地址事件
+    var div_address_select = document.getElementsByClassName('address_select');
+    for(var i =0;i<div_address_select.length;i++){
+        div_address_select[i].addEventListener('click',function(){
+            for(var j =0;j<div_address_select.length;j++){
+                div_address_select[j].setAttribute('class','address_select');
+            }
+            this.classList.add('send_to_selected');
+        })
+    }
+
+
+    //绑定选择详细地址事件  暂时绑定在顶部购物车文字上
+    var div_send_to_btn = document.getElementsByClassName('content')[0];
+    div_send_to_btn.addEventListener('click',function(){
+        var div_jf_pop_up_bg = document.createElement('div');
+        var div_jf_pop_up = document.createElement('div');
+        div_jf_pop_up_bg.setAttribute('class','jf_pop_up_bg');
+        div_jf_pop_up.setAttribute('class','jf_pop_up show');
+        div_jf_pop_up.setAttribute('style','display:block');
+        document.body.appendChild(div_jf_pop_up);
+        div_jf_pop_up.appendChild(div_jf_pop_up_bg);
+        var div_send_to = document.getElementsByClassName('send_to')[0];
+        div_send_to.style.transform = 'translateY(0%)';
+    })
+</script>

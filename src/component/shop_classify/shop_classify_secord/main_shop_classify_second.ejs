@@ -1,0 +1,73 @@
+<!-- 顶部导航 -->
+<nav class="jd_top_bar">
+    <div class="tab_box"></div>
+    <div class="jd_top_contain jdshop_alignment_center">
+        <a class="left" onclick="window.history.go(-1)">
+            <p class="back"><img src="../../images/nav_go_back.png"></p>
+        </a>
+        <div class="content jdshop_alignment_center">
+            店铺分类
+        </div>
+        <a class="right">
+
+        </a>
+    </div>
+</nav>
+
+<div class="shop_classify">
+    <div class="classify_left">
+        <div class="tab_classify classify_selected">居家</div>
+        <div class="tab_classify">配件</div>
+        <div class="tab_classify">服装</div>
+        <div class="tab_classify">电器</div>
+        <div class="tab_classify">洗护</div>
+        <div class="tab_classify">饮食</div>
+        <div class="tab_classify">餐厨</div>
+        <div class="tab_classify">婴童</div>
+        <div class="tab_classify">文体</div>
+        <div class="tab_classify">特色区</div>
+    </div>
+    <div class="classify_right">
+        <div class="classify_box">
+            <img src="../../images/product_b2_s.jpg" alt="">
+            <div class="classify_name">床品件套</div>
+        </div>
+        <div class="classify_box">
+            <img src="../../images/product_b2_s.jpg" alt="">
+            <div class="classify_name">被罩</div>
+        </div>
+        <div class="classify_box">
+            <img src="../../images/product_b2_s.jpg" alt="">
+            <div class="classify_name">家具</div>
+        </div>
+        <div class="classify_box">
+            <img src="../../images/product_b2_s.jpg" alt="">
+            <div class="classify_name">收纳</div>
+        </div>
+        <div class="classify_box">
+            <img src="../../images/product_b2_s.jpg" alt="">
+            <div class="classify_name">布艺软装</div>
+        </div>
+        <div class="classify_box">
+            <img src="../../images/product_b2_s.jpg" alt="">
+            <div class="classify_name">家饰</div>
+        </div>
+        <div class="classify_box">
+            <img src="../../images/product_b2_s.jpg" alt="">
+            <div class="classify_name">宠物</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var div_tab_classify = document.getElementsByClassName('tab_classify');
+    for(var i = 0; i < div_tab_classify.length;i++){
+        div_tab_classify[i].addEventListener('click',function(){
+            var div_classify_selected = document.getElementsByClassName('classify_selected');
+            for(var j = 0; j< div_classify_selected.length;j++){
+                div_classify_selected[j].classList.remove('classify_selected');
+            }
+            this.classList.add('classify_selected');
+        })
+    }
+</script>

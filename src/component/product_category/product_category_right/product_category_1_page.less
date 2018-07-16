@@ -1,0 +1,113 @@
+.product_category_page {
+  width: 75%;
+  height: 566px;
+  //width: calc(~'100% - 100px');
+  height: calc(~'100vh - 101px');
+  overflow-y: scroll;
+  .recommended_title {
+    position: relative;
+    text-align: left;
+    padding: 10px 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+    .line {
+      flex: 1;
+      text-align: center;
+      hr {
+        width: 80%;
+
+      }
+    }
+    .in_yx {
+      position: relative;
+      width: 100%;
+      box-sizing: border-box;
+      //overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 6px;
+      margin-bottom: 30px;
+      .yx_left, .yx_right {
+        background-color: #ffffff;
+        width: 45%;
+        margin: 1px 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+        img {
+          width: 100%;
+          height: 70px;
+          //background-color: #c91523;
+        }
+      }
+    }
+    .title {
+          padding: 10px;
+          font-weight: bold;
+          i {
+            position: relative;
+            left: 5px;
+            top: -5px;
+            display: inline-block;
+            border-top: 1px solid #ababab;
+            width: 60%;
+            transform-origin: 0 0;
+            transform: scaleY(.6);
+          }
+        }
+        .product_category_list {
+          box-sizing: border-box;
+          position: relative;
+          width: 100%;
+          padding: 0 3px;
+          .product_box {
+            display: block;
+            width: 30%;
+            background-color: #fff;
+            box-sizing: inherit;
+            float: left;
+            margin: 0 4px 4px 0;
+            color: #4a4a4a;
+            .product_img {
+              position: relative;
+              width: 65px;
+              height: 65px;
+              margin: 5px auto;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            p {
+              text-align: center;
+              font-size: 12px;
+              line-height: 20px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            &:nth-child(3n+0) {
+              margin-right: 0;
+            }
+            &:active {
+              background-color: #ececec;
+              opacity: .8;
+            }
+          }
+          &:after {
+            content: '';
+            display: block;
+            clear: both;
+            height: 0;
+            overflow: hidden;
+          }
+        }
+  }
+
+

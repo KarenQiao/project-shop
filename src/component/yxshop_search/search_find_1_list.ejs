@@ -1,0 +1,43 @@
+<div class="search_find_title">
+    <a href="/search_results.html">电脑主板</a>
+
+    <div class="pop_cancel"></div>
+</div>
+
+<div class="search_find_title">
+    <a href="/search_results.html">电脑主板</a>
+
+    <div class="pop_cancel"></div>
+</div>
+
+<div class="search_find_title">
+    <a href="/search_results.html">电脑主板</a>
+
+    <div class="pop_cancel"></div>
+</div>
+
+<div class="search_find_title">
+    <a href="/search_results.html">电脑主板</a>
+
+    <div class="pop_cancel"></div>
+</div>
+
+
+
+<script>
+
+    var deleteElement=document.getElementsByClassName('pop_cancel');
+
+    for (var i=0;i<deleteElement.length;i++) {
+
+        deleteElement[i].addEventListener('click',function () {
+
+            var noneDiv=this.parentNode;
+
+            document.getElementsByClassName('search_find_line')[0].removeChild(noneDiv);
+
+        },false)
+
+    }
+
+</script>
