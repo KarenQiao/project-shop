@@ -139,7 +139,13 @@
       height: 1px;
       color: #ddd;
       transform-origin: 0 0;
-      transform: scaleY(.6)
+      transform: scaleY(.6);
+      clear: both;
+    }
+    &:before{
+      content: '';
+      display: table;
+      clear: both;
     }
   }
   .no_line{

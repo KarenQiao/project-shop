@@ -154,8 +154,8 @@
             共<span>1</span>件商品，需付款：<span>￥2389.00</span>
         </div>
         <!-- 操作按钮 -->
-        <div class="order_btn_list go_pie">
-            <a class="order_btn" href="../jdshop_order/shop_order_details.html">删除订单</a>
+        <div class="order_btn_list go_pie jdshop_btn_mini">
+            <a class="order_btn">删除订单</a>
         </div>
 
     </div>
@@ -345,5 +345,28 @@
 
     /*切换tab*/
     jfOrderTab.switchTab();
+
+    //添加删除订单按钮事件监听 点击后弹窗
+    var div_jdshop_alignment_center = document.getElementsByClassName('jdshop_btn_mini')[0];
+    div_jdshop_alignment_center.addEventListener('click',function(){
+        jfShowTips.dialogShow({
+            'minText':'确认要删除订单么？',
+            'checkBtnText':'取消',
+            'cancleBtnText':'确认',
+            'checkFn': function() {
+                jfShowTips.dialogRemove();
+            }
+        });
+
+        //更改弹窗样式和按键属性
+        var div_text_big = document.getElementsByClassName('text_big');
+        div_text_big[div_text_big.length-1].remove();
+        var div_text_small = document.getElementsByClassName('text_small');
+        div_text_small[div_text_small.length-1].setAttribute('style','padding:20px 20px 10px;color:#4a4a4a;box-sizing: border-box;text-align:center;');
+        var div_check = document.getElementsByClassName('dialog_check');
+        var div_cancel = document.getElementsByClassName('dialog_cancel');
+        div_check[div_check.length-1].setAttribute('class','dialog_cancel gray');
+        div_cancel[div_cancel.length-1].setAttribute('class','dialog_check red');
+    });
 
 </script>

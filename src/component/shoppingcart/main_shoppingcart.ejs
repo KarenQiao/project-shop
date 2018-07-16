@@ -145,6 +145,7 @@
     var div_jd_all = document.getElementsByClassName('jd_list')[0];
     var div_yx_all = document.getElementsByClassName('yx_list')[0];
     var div_all = document.getElementsByClassName('allcheck')[0];
+    var div_all_1 = document.getElementsByClassName('allcheck')[1];
     var check_jd_all = div_jd_all.getElementsByClassName('company_checkbox')[0].getElementsByClassName('radio')[0];
     var check_yx_all = div_yx_all.getElementsByClassName('company_checkbox')[0].getElementsByClassName('radio')[0];
     var div_jd_check = div_jd_all.getElementsByClassName('list_contain');
@@ -154,6 +155,19 @@
     div_all.addEventListener('click',function(){
         var all_check = document.getElementsByClassName('radio');
         if(div_all.checked){
+            for(var i = 0;i<all_check.length;i++){
+                all_check[i].checked = true;
+            }
+        }
+        else{
+            for(var i = 0;i<all_check.length;i++){
+                all_check[i].checked = false;
+            }
+        }
+    })
+    div_all_1.addEventListener('click',function(){
+        var all_check = document.getElementsByClassName('radio');
+        if(div_all_1.checked){
             for(var i = 0;i<all_check.length;i++){
                 all_check[i].checked = true;
             }

@@ -956,29 +956,11 @@ var bottomBtn={
 
     showBar:function () {
 
-        var clickPopup=document.getElementsByClassName('bottom_bgd');
-
         var hideShowTab=document.getElementsByClassName('table_bar_part');
 
         for (var i=0;i<hideShowTab.length;i++) {
 
             hideShowTab[i].addEventListener('click',function () {
-
-                document.getElementsByClassName('hide_left_table')[0].className = 'hide_left_table';
-
-                document.getElementsByClassName('hide_right_table')[0].className = 'hide_right_table';
-
-                document.getElementsByTagName('body')[0].className = '';
-
-                document.getElementsByTagName('html')[0].className = '';
-
-            },false)
-
-        }
-
-        for (var i=0;i<clickPopup.length;i++) {
-
-            clickPopup[i].addEventListener('click',function () {
 
                 document.getElementsByClassName('hide_left_table')[0].className = 'hide_left_table';
 
